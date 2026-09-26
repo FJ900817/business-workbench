@@ -1,0 +1,196 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`XHS production execution gate > freezes the keyless assembled action, policy, Skill origin, inputs, outputs, and schema 1`] = `
+{
+  "assembly": {
+    "action": "xhs-body-prepare-v0",
+    "draftFormat": {
+      "id": "xhs-draft-markdown-v1",
+      "version": 1,
+    },
+    "executionModes": [
+      "fixture",
+      "production",
+    ],
+    "hardContract": {
+      "projectionVersion": 3,
+      "validationVersion": 4,
+      "validator": "xhs-hard-contract-l1-v3",
+    },
+    "inputBindings": {
+      "dry-search": {
+        "goldenSample": "01_小红书生产创作系统/05_模板与母版/笔记文案母版/01_干货搜索型/02_黄金样稿.md",
+        "writingRule": "01_小红书生产创作系统/02_方法论与创作规范/产品1-视觉审美认知系统/选题创作规范/干货搜索型选题创作规范_V3.0.md",
+      },
+      "hot-traffic": {
+        "goldenSample": "01_小红书生产创作系统/05_模板与母版/笔记文案母版/03_热点流量型/02_黄金样稿.md",
+        "writingRule": "01_小红书生产创作系统/02_方法论与创作规范/产品1-视觉审美认知系统/选题创作规范/热点流量型选题创作规范_V3.0.md",
+      },
+      "recommendation": {
+        "goldenSample": "01_小红书生产创作系统/05_模板与母版/笔记文案母版/02_干货推荐型/02_黄金样稿.md",
+        "writingRule": "01_小红书生产创作系统/02_方法论与创作规范/产品1-视觉审美认知系统/选题创作规范/干货推荐型选题创作规范_V3.0.md",
+      },
+    },
+    "inputRoles": [
+      "taskCard",
+      "writingRule",
+      "goldenSample",
+    ],
+    "modelOutputFormat": "markdown-text-v1",
+    "modelPolicy": "deployment-fixed",
+    "outputNames": [
+      "draft.md",
+      "draft-metadata.json",
+      "provenance.json",
+    ],
+    "outputType": "intermediate",
+    "outputVersion": 1,
+    "policyVersion": "xhs-body-prepare-policy-v2-text",
+    "project": "xhs",
+    "runner": "restricted-agent",
+    "skillBindings": {
+      "account1": {
+        "exactSource": ".agents/skills/S3-笔记写作-账号1/SKILL.md",
+        "formalName": "S3-笔记写作-账号1",
+        "provider": "business-xhs-production-v1",
+        "skillId": "xhs-s3-account1",
+        "source": "project-agents",
+      },
+      "account2": {
+        "exactSource": ".agents/skills/S3-笔记写作-账号2/SKILL.md",
+        "formalName": "S3-笔记写作-账号2",
+        "provider": "business-xhs-production-v1",
+        "skillId": "xhs-s3-account2",
+        "source": "project-agents",
+      },
+      "account3": {
+        "exactSource": ".agents/skills/S3-笔记写作-账号3/SKILL.md",
+        "formalName": "S3-笔记写作-账号3",
+        "provider": "business-xhs-production-v1",
+        "skillId": "xhs-s3-account3",
+        "source": "project-agents",
+      },
+      "account4": {
+        "exactSource": ".agents/skills/S3-笔记写作-账号4/SKILL.md",
+        "formalName": "S3-笔记写作-账号4",
+        "provider": "business-xhs-production-v1",
+        "skillId": "xhs-s3-account4",
+        "source": "project-agents",
+      },
+    },
+    "sourceAdapter": {
+      "contractSchemaVersion": 1,
+      "discovery": false,
+      "fallback": false,
+      "productionBaseline": "03 项目生态【生命体】/项目-小红书/01_小红书生产创作系统/00_系统总控/00_小红书正式生产运行基线.yaml",
+      "productionEntry": "03 项目生态【生命体】/项目-小红书/00_小红书单篇正式生产入口.md",
+      "taskCardIdentity": [
+        "account",
+        "productionMonth",
+        "productionWeek",
+        "note",
+      ],
+      "version": "xhs-production-source-v1",
+    },
+    "toolPolicy": {
+      "allowed": [],
+      "discovery": false,
+      "subagent": false,
+    },
+  },
+  "package": {
+    "allowedCapabilities": [
+      "restricted-agent",
+    ],
+    "allowedReadRoots": [],
+    "allowedSkills": [
+      "xhs-s3-account1",
+    ],
+    "inputRoles": [
+      "taskCard",
+      "writingRule",
+      "goldenSample",
+    ],
+    "skillSnapshots": [
+      {
+        "contentHash": "a74a6bc4c363f6dab301a50c413e7db86cfa45f2323e6c29574d8dad8f8a7814",
+        "provider": "runtime",
+        "skillId": "xhs-s3-account1",
+        "source": "runtime",
+      },
+    ],
+    "workflowVersion": "xhs-body-prepare-v0",
+  },
+  "policy": {
+    "action": "xhs-body-prepare-v0",
+    "model": {
+      "maxTokens": 512,
+      "model": "fixture-model",
+      "provider": "fixture-provider",
+      "timeoutMs": 2000,
+    },
+    "output": "xhs-output-bundle",
+    "policyVersion": "xhs-body-prepare-policy-v2-text",
+  },
+  "schemaVersion": 5,
+}
+`;
+
+exports[`XHS production execution gate > runs text-first Chinese content through a Loader composition and settles only one immutable bundle 1`] = `
+{
+  "attempt": "completed",
+  "checklist": "【本篇执行硬合同】
+- note_type：dry-search
+- 标题：18—20全字符；字符数由 Host 计算，模型自报不作为生产事实
+- 正文：10—2000全字符；字符数由 Host 计算，模型自报不作为生产事实
+- 精确关键词：合成（标题×1）
+- 正文结构：开头：合成测试
+- 产品模块：合成模块
+- 评论：置顶0条 + 非置顶0条
+- 关联话题：无
+
+【输出格式】
+只返回以下结构的正式 Markdown，不要输出完整方案、解释文字、外层报告标题或代码围栏：
+# {title}
+
+标题字符数：XX + 正文字符数：XXX
+
+{body}
+
+{Leo signature if required}
+
+## 置顶评论
+
+{pinned comment}
+
+## 非置顶评论
+
+评论1：
+{comment 1}
+
+评论2：
+{comment 2}
+
+## 关联话题
+
+{hashtags}",
+  "draftUnchanged": true,
+  "job": "completed",
+  "lease": "released",
+  "outputs": [
+    "draft.md",
+    "draft-metadata.json",
+    "provenance.json",
+  ],
+  "system": "You are the Business Workbench restricted fixture Agent.
+
+Use only the frozen inputs in the user message and the approved Skill snapshots below.
+
+Return only the complete draft as plain Markdown text, not JSON or an outer code fence. Do not add transport commentary. Use only the frozen fixture inputs and approved account Skill; do not request tools, files, Skills, or other context.
+
+<approved_skill id="xhs-s3-account1" snapshot="cd5b63d2fe535867f515b4831e18bf78d764e383354860f3f6789e1733fc4978">
+Use only the frozen task card, V3 writing rule, and golden sample. Never request tools.
+</approved_skill>",
+  "tools": [],
+}
+`;

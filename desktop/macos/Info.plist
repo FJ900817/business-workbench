@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>zh_CN</string>
+  <key>CFBundleDisplayName</key>
+  <string>DeepSeek Harness</string>
+  <key>CFBundleExecutable</key>
+  <string>DeepSeekHarness</string>
+  <key>CFBundleIconFile</key>
+  <string>AppIcon.png</string>
+  <key>CFBundleIdentifier</key>
+  <string>ai.deepseek.harness.desktop</string>
+  <key>CFBundleInfoDictionaryVersion</key>
+  <string>6.0</string>
+  <key>CFBundleName</key>
+  <string>DeepSeek Harness</string>
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+  <key>CFBundleShortVersionString</key>
+  <string>0.2.1</string>
+  <key>CFBundleVersion</key>
+  <string>11</string>
+  <key>LSMinimumSystemVersion</key>
+  <string>13.0</string>
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsLocalNetworking</key>
+    <true/>
+  </dict>
+  <key>NSHighResolutionCapable</key>
+  <true/>
+  <key>NSDocumentsFolderUsageDescription</key>
+  <string>用于从“文稿”中的本地项目启动 DeepSeek Harness，并访问你选择的工作区。</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>用于把你的语音实时转成 DeepSeek Harness 会话消息。</string>
+  <key>NSSpeechRecognitionUsageDescription</key>
+  <string>用于识别你对 DeepSeek Harness 语音伴侣说的话。</string>
+</dict>
+</plist>

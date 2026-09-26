@@ -1,0 +1,138 @@
+.avatar {
+  --workspace-ink: #2563eb;
+  --workspace-wash: #edf3ff;
+  --workspace-edge: #cfddff;
+  --workspace-asset: url('/workspace-mascots/command.svg');
+  position: relative;
+  display: inline-grid;
+  flex: none;
+  box-sizing: border-box;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--workspace-ink);
+}
+
+.projects {
+  --workspace-ink: #059669;
+  --workspace-wash: #e8f8f0;
+  --workspace-edge: #bcebd5;
+  --workspace-asset: url('/workspace-mascots/projects.svg');
+  border-radius: 0;
+}
+
+.work {
+  --workspace-ink: #ed7b18;
+  --workspace-wash: #fff3e8;
+  --workspace-edge: #f5d1b2;
+  --workspace-asset: url('/workspace-mascots/work.svg');
+  border-radius: 0;
+}
+
+.studios {
+  --workspace-ink: #7c3aed;
+  --workspace-wash: #f2ecff;
+  --workspace-edge: #d8c8ff;
+  --workspace-asset: url('/workspace-mascots/studios.svg');
+  border-radius: 0;
+}
+
+.radar {
+  --workspace-ink: #0f9f9a;
+  --workspace-wash: #e7f8f7;
+  --workspace-edge: #bce9e7;
+  --workspace-asset: url('/workspace-mascots/radar.svg');
+  border-radius: 0;
+}
+
+.mark {
+  display: block;
+  width: 52px;
+  height: 52px;
+  background: var(--workspace-asset) center / contain no-repeat;
+  transform-origin: center;
+}
+
+/* Keep one optical footprint across the identity marks. */
+.projects .mark { width: 50px; height: 50px; transform: scaleX(1.02); }
+.work .mark { width: 48px; height: 48px; transform: translateY(-0.5px); }
+.studios .mark { width: 50px; height: 50px; transform: translateX(0.5px); }
+.radar .mark { width: 50px; height: 50px; transform: translateY(0.5px); }
+
+.markOverride { width: auto; height: auto; background: none; }
+.hero .markOverride:has(> [data-slot='conversation.hero.brand.mark']:empty) {
+  width: 62px;
+  height: 62px;
+  background: var(--workspace-asset) center / contain no-repeat;
+}
+
+.status {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: var(--workspace-ink);
+}
+
+.avatar[data-state='idle'] .status { opacity: 0.7; }
+.avatar[data-state='thinking'] .status { background: #c08a31; }
+.avatar[data-state='working'] .status { background: #347caa; box-shadow: 0 0 0 2px color-mix(in srgb, #347caa 20%, transparent); }
+.avatar[data-state='complete'] .status { background: #31825e; }
+.avatar[data-state='complete'] .status::after { content: '✓'; position: absolute; inset: -2px 0 0; color: #fff; font-size: 7px; font-weight: 800; line-height: 8px; text-align: center; }
+
+.hero {
+  width: 76px;
+  height: 76px;
+  border-radius: 0;
+}
+
+.hero.projects,
+.hero.work,
+.hero.studios,
+.hero.radar { border-radius: 0; }
+.hero .mark { width: 64px; height: 64px; }
+.hero .status { right: 0; bottom: 0; width: 10px; height: 10px; border-width: 2px; }
+.hero[data-state='idle'] .mark { animation: workspace-breath 7.2s ease-in-out 1.2s infinite; }
+.hero[data-state='thinking'] .mark { transform: rotate(-2deg) scale(1.02); }
+.hero[data-state='working'] .status { box-shadow: 0 0 0 4px color-mix(in srgb, #347caa 16%, transparent); }
+.hero[data-state='complete'] .status { transform: scale(1.1); }
+
+@keyframes workspace-breath {
+  0%, 72%, 100% { transform: translateY(0) scale(1); }
+  82% { transform: translateY(-1px) scale(1.012); }
+  91% { transform: translateY(0) scale(1); }
+}
+
+@keyframes status-glow {
+  0%, 76%, 100% { opacity: 0.72; box-shadow: 0 0 0 0 transparent; }
+  86% { opacity: 1; box-shadow: 0 0 0 2px color-mix(in srgb, var(--workspace-ink) 14%, transparent); }
+}
+
+@keyframes workspace-presence {
+  0%, 78%, 100% { transform: translateY(0); }
+  86% { transform: translateY(-0.75px); }
+}
+
+.hero[data-state='idle'] .status { animation: status-glow 6.8s ease-in-out 1.5s infinite; }
+
+[aria-pressed='true'] [data-workspace-identity] .mark { animation: workspace-presence 7.4s ease-in-out 2.1s infinite; }
+[aria-pressed='true'] [data-workspace-identity] .status { animation: status-glow 6.8s ease-in-out 1.7s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero[data-state='idle'] .mark,
+  .hero[data-state='idle'] .status,
+  [aria-pressed='true'] [data-workspace-identity] .mark,
+  [aria-pressed='true'] [data-workspace-identity] .status {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero[data-state='idle'] .mark { animation: none; }
+}

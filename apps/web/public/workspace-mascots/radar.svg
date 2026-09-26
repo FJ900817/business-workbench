@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="radar placeholder">
+  <rect x="6" y="6" width="52" height="52" rx="16" fill="#E7F8F7" stroke="#0F9F9A" stroke-width="2"/>
+  <text x="32" y="42" text-anchor="middle" fill="#0F9F9A" font-family="Arial, sans-serif" font-size="27" font-weight="700">R</text>
+</svg>
