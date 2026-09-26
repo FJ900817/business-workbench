@@ -1,4 +1,4 @@
-> **Independent Business Workbench source snapshot.** This repository builds on [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) under its MIT license. It is not an official DeepSeek release. Read the [Workbench guide](README.workbench.zh.md) before using it. The current Workbench navigation is a presentation layer; the business plugin is Host-only. Third-party Grok-derived mascot files and private business data are excluded from this public snapshot.
+> **Independent Business Workbench source snapshot.** This repository builds on [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) under its MIT license. It is not an official DeepSeek release. Read the [Workbench guide](README.workbench.zh.md) before using it. The current Workbench navigation is a presentation layer; the business plugin is Host-only. Third-party Grok-derived mascot files and private business data are excluded from this public snapshot. [Download the complete source ZIP](https://github.com/FJ900817/business-workbench/releases/download/snapshot-2026-09-26/Business-Workbench-source.zip).
 
 # DeepSeek Harness
 
